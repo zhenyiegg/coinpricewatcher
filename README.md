@@ -1,8 +1,8 @@
-# Cryptocurrency Price Watcher
+# Coin Price Watcher
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-Cryptocurrency Price Watcher is a tool for tracking real-time cryptocurrency prices and changes. Stay updated on your favorite cryptocurrencies with ease.
+Coin Price Watcher is a tool for tracking real-time cryptocurrency prices and changes. Stay updated on your favorite cryptocurrencies with ease.
 
 ## Features
 
@@ -14,8 +14,8 @@ Cryptocurrency Price Watcher is a tool for tracking real-time cryptocurrency pri
 1. **Clone the Repository:**
 
     ```bash
-    git clone https://github.com/your-username/cryptocurrency-price-watcher.git
-    cd cryptocurrency-price-watcher
+    git clone https://github.com/your-username/coin-price-watcher.git
+    cd coin-price-watcher
     ```
 
 2. **Install Dependencies:**
@@ -36,5 +36,4 @@ Cryptocurrency Price Watcher is a tool for tracking real-time cryptocurrency pri
 
 ## Technologies Used
 
--   **Node.js:** Backend runtime environment.
--   **Crypto API:** Fetches cryptocurrency price data.
+-   **Crypto API:** Fetches CoinGecko cryptocurrency price data API.
