@@ -2,6 +2,8 @@ import "./App.css";
 import { useState } from "react";
 import axios from "axios";
 import { trimArrayToTen } from "./utils/common";
+import Header from "./components/Header";
+import CoinTable from "./components/CoinTable";
 
 function App() {
     const [coinData, setCoinData] = useState([]);
@@ -19,18 +21,9 @@ function App() {
     return (
         <div className="App">
             <header className="App-header">
+                <Header />
                 <button onClick={handleFetchCoinData}>Get Coin Data!</button>
-                <div>
-                    {coinData.map((coin) => {
-                        return (
-                            <div key={coin.id}>
-                                <div>{coin.id}</div>
-                                <div>{coin.name}</div>
-                                <div>{coin.symbol}</div>
-                            </div>
-                        );
-                    })}
-                </div>
+                <CoinTable tableData={coinData} />
             </header>
         </div>
     );
