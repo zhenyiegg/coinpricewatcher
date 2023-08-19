@@ -1,5 +1,5 @@
 import "./App.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 import { trimArrayToTen } from "./utils/common";
 import Header from "./components/Header";
@@ -10,7 +10,7 @@ function App() {
     const handleFetchCoinData = async () => {
         try {
             const coinGeckoData = await axios.get(
-                "https://api.coingecko.com/api/v3/coins/list?include_platform=false",
+                "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=10&page=1&sparkline=false&locale=en",
             );
             setCoinData(trimArrayToTen(coinGeckoData.data));
         } catch (error) {
@@ -18,11 +18,14 @@ function App() {
         }
     };
 
+    useEffect(() => {
+        handleFetchCoinData();
+    }, []);
+
     return (
         <div className="App">
             <header className="App-header">
                 <Header />
-                <button onClick={handleFetchCoinData}>Get Coin Data!</button>
                 <CoinTable tableData={coinData} />
             </header>
         </div>
