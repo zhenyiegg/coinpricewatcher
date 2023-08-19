@@ -14,7 +14,7 @@ Coin Price Watcher is a tool for tracking real-time cryptocurrency prices and ch
 1. **Clone the Repository:**
 
     ```bash
-    git clone https://github.com/your-username/coin-price-watcher.git
+    git clone https://github.com/zhenyiegg/coinpricewatcher.git
     cd coin-price-watcher
     ```
 
