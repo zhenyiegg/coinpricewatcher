@@ -1,24 +1,36 @@
-import logo from "./logo.svg";
 import "./App.css";
+import { useState } from "react";
+import axios from "axios";
+import { trimArrayToTen } from "./utils/common";
 
 function App() {
-    const a = 5;
+    const [coinData, setCoinData] = useState([]);
+    const handleFetchCoinData = async () => {
+        try {
+            const coinGeckoData = await axios.get(
+                "https://api.coingecko.com/api/v3/coins/list?include_platform=false",
+            );
+            setCoinData(trimArrayToTen(coinGeckoData.data));
+        } catch (error) {
+            console.log(error);
+        }
+    };
 
     return (
         <div className="App">
             <header className="App-header">
-                <img src={logo} className="App-logo" alt="logo" />
-                <p>
-                    Edit <code>src/App.js</code> and save to reload.
-                </p>
-                <a
-                    className="App-link"
-                    href="https://reactjs.org"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    Learn React {a}
-                </a>
+                <button onClick={handleFetchCoinData}>Get Coin Data!</button>
+                <div>
+                    {coinData.map((coin) => {
+                        return (
+                            <div key={coin.id}>
+                                <div>{coin.id}</div>
+                                <div>{coin.name}</div>
+                                <div>{coin.symbol}</div>
+                            </div>
+                        );
+                    })}
+                </div>
             </header>
         </div>
     );
