@@ -1,7 +1,7 @@
 import React from "react";
 
 const Header = () => {
-    return <h1>CRYPTO PRICE WATCHER</h1>;
+    return <h1>COIN PRICE WATCHER</h1>;
 };
 
 export default Header;
